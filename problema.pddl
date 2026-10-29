@@ -129,7 +129,7 @@
 
   (:goal
     (and
-      ;; Cada zona indicada debe recibir el tratamiento correspondiente.
+      ;; Cada zona debe tener su tratamiento .
       (fuego-atacado loc1)
       (agua-descargada loc1)
       (fuego-atacado loc2)

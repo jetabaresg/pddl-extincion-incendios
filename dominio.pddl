@@ -9,7 +9,7 @@
   )
 
   (:predicates
-    ;; Dónde está cada equipo y qué trayectos puede hacer un vehículo.
+    ;; Dónde está cada equipo y que rutas hace.
     (en ?e - equipo ?l - localizacion)
     (transitable ?origen ?destino - localizacion)
 
@@ -17,7 +17,7 @@
     (cargado-agua ?a - avioneta)
     (cargado-retardante ?h - helicoptero)
 
-    ;; Una localización puede disponer de uno o varios suministros.
+    ;; Una localización puede tener varios suministros.
     (suministro-agua ?l - localizacion)
     (suministro-retardante ?l - localizacion)
     (suministro-combustible ?l - localizacion)
@@ -27,7 +27,7 @@
     (agua-descargada ?l - localizacion)
     (retardante-descargado ?l - localizacion)
 
-    ;; son como semáforos para que no hayan operaciones incompatibles.
+    ;; para que no hayan operaciones incompatibles.
     (repostando-en ?l - localizacion)
     (recargando-agua-en ?l - localizacion)
     (atacando-terrestre-en ?l - localizacion)
@@ -86,7 +86,7 @@
     )
   )
 
-  ;; El retardante no tiene un semáforo exclusivo: varias cargas pueden coincidir.
+  ;;  varias cargas de retardante  pueden coincidir.
   (:durative-action rellenar-retardante
     :parameters (?h - helicoptero ?l - localizacion)
     :duration (= ?duration 50)
